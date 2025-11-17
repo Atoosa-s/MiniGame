@@ -1,5 +1,7 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerController : MonoBehaviour
 {
@@ -18,13 +20,13 @@ public class PlayerController : MonoBehaviour
 
   
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
@@ -74,6 +76,7 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("Player ist raus gefallen!");
         Time.timeScale = 0f; 
+        SceneManager.LoadScene(2);
         
     }
     }

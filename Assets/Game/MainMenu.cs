@@ -16,10 +16,10 @@ public class MainMenu : MonoBehaviour
 
   void Start()
   {
-    // Highscore laden
+    
     int savedHigh = PlayerPrefs.GetInt("HighScore", 0);
 
-    // Text setzen
+
     highScore.text = "High Score: " + savedHigh;
 
   }

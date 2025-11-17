@@ -22,10 +22,10 @@ public class CoinManager : MonoBehaviour
 
     void Start()
     {
-        // Highscore laden
+        
         savedHighScore = PlayerPrefs.GetInt("HighScore", 0);
 
-        // UI aktualisieren
+       
         scoreText.text = totalCoins + " Points!";
         highScore.text = "HighScore " + savedHighScore;
     }
@@ -35,13 +35,13 @@ public class CoinManager : MonoBehaviour
         totalCoins += amount;
         scoreText.text = totalCoins + " Points!";
 
-        // Wenn neuer Highscore → speichern
+       
         if (totalCoins > savedHighScore)
         {
             savedHighScore = totalCoins;
             PlayerPrefs.SetInt("HighScore", savedHighScore);
 
-            // Auch UI aktualisieren
+         
             highScore.text = "HighScore " + savedHighScore;
         }
 

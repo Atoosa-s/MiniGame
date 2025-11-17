@@ -30,7 +30,7 @@ public class WinLose : MonoBehaviour
 
         if (coinManager.getCoin() < 0)
         {
-            Debug.Log("Game Over!");  // ← Panel anzeigen
+            Debug.Log("Game Over!");  
             Time.timeScale = 0f;
             coinManager.RemoveCoin(3);
             SceneManager.LoadScene(2);
