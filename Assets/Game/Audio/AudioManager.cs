@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-     public static AudioManager instance;
     [Header("-----Audio Source----")]
     [SerializeField] AudioSource MusicSource;
 
@@ -12,21 +11,6 @@ public class AudioManager : MonoBehaviour
     public AudioClip BoxTouch;
     public AudioClip CheckPoint;
 
-    void Awake()
-    {
-        // Singleton erstellen
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-            return;
-        }
-    }
-    
     public void Start()
     {
         MusicSource.clip = backGround;
