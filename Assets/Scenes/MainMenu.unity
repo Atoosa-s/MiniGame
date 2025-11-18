@@ -883,7 +883,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 509410505}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: stop
+        m_MethodName: SetMute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2209,6 +2209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenu
   highScore: {fileID: 1134001847}
   pauseMenuUI: {fileID: 0}
+  audioToggle: {fileID: 0}
 --- !u!1 &1820761329
 GameObject:
   m_ObjectHideFlags: 0
@@ -2822,7 +2823,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 509410505}
         m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
-        m_MethodName: Start
+        m_MethodName: TurnMusicOn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 using UnityEditor;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class MainMenu : MonoBehaviour
   public TMP_Text highScore;
   public static bool GameIsPaused = false;
   public GameObject pauseMenuUI;
+  public Toggle audioToggle;
 
 
 
@@ -21,6 +23,11 @@ public class MainMenu : MonoBehaviour
 
 
     highScore.text = "High Score: " + savedHigh;
+
+    if (audioToggle != null && AudioManager.instance != null)
+    {
+      audioToggle.isOn = !AudioManager.instance.IsMuted();
+    }
 
   }
 
@@ -70,4 +77,31 @@ public class MainMenu : MonoBehaviour
       Time.timeScale = 0f;
       GameIsPaused = true;
     }
+
+  public void OnAudioToggleChanged(bool isOn)
+  {
+    if (AudioManager.instance != null)
+    {
+      if (isOn)
+      {
+        AudioManager.instance.TurnMusicOn();
+      }
+      else
+      {
+        AudioManager.instance.SetMute();
+      }
+    }
+  }
+
+  public void OnMusicOnButton()
+  {
+    if (AudioManager.instance != null)
+    {
+      AudioManager.instance.TurnMusicOn();
+      if (audioToggle != null)
+      {
+        audioToggle.isOn = true;
+      }
+    }
+  }
 }
